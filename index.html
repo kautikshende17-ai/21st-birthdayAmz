@@ -9,8 +9,27 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        /* NEW STYLE FOR THE GLOWING TITLE */
+        h1 {
+            text-shadow: 0 0 15px rgba(201, 164, 106, 0.5); /* This creates the gold glow */
+        }
+        
+        /* NEW STYLES FOR THE PARTICLE BACKGROUND */
+        #tsparticles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Puts the background behind everything */
+        }
+    </style>
 </head>
 <body>
+
+    <div id="tsparticles"></div>
+
     <div class="container">
         <header data-aos="fade-down">
             <img src="https://i.imgur.com/gflF68n.png" alt="Happy Birthday Banner">
@@ -27,23 +46,51 @@
             <h2 data-aos="fade-up">Click on a friend to see their message:</h2>
             
             <div class="friend-gallery">
-                <a href="DDfriend1.html" class="friend-link" data-aos="fade-up" data-aos-delay="100">
+                <a href="sara.html" class="friend-link" data-aos="fade-up" data-aos-delay="100">
                     <img src="https://i.imgur.com/USER_ICON.png" alt="Friend 1 Photo">
-                    <h3>[Friend 1's Name]</h3>
+                    <h3>Sara</h3>
                 </a>
 
-                <a href="Thusharfriend2.html" class="friend-link" data-aos="fade-up" data-aos-delay="200">
+                <a href="rohan.html" class="friend-link" data-aos="fade-up" data-aos-delay="200">
                     <img src="https://i.imgur.com/USER_ICON.png" alt="Friend 2 Photo">
-                    <h3>[Friend 2's Name]</h3>
+                    <h3>Rohan</h3>
                 </a>
                 
                 </div>
         </main>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.9.3/tsparticles.bundle.min.js"></script>
+    
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
     <script>
+      // Initialize the scroll animations
       AOS.init({ duration: 1000 });
+
+      // Initialize the particle background
+      tsParticles.load("tsparticles", {
+        fpsLimit: 60,
+        particles: {
+          number: { value: 50, density: { enable: true, value_area: 800 } },
+          color: { value: "#c9a46a" },
+          shape: { type: "circle" },
+          opacity: { value: 0.5, random: true, anim: { enable: true, speed: 1, opacity_min: 0.1, sync: false } },
+          size: { value: 2, random: true, anim: { enable: false, speed: 40, size_min: 0.1, sync: false } },
+          line_linked: { enable: false },
+          move: {
+            enable: true,
+            speed: 0.5,
+            direction: "none",
+            random: true,
+            straight: false,
+            out_mode: "out",
+            bounce: false,
+            attract: { enable: false, rotateX: 600, rotateY: 1200 }
+          }
+        },
+        detectRetina: true
+      });
     </script>
 </body>
 </html>

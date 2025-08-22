@@ -7,131 +7,43 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
-    <style>
-        html {
-            scroll-behavior: smooth; /* This makes the jumping smooth */
-        }
-        body {
-            background-color: #1a1a1d;
-            color: #f5f5f5;
-            font-family: 'Lato', sans-serif;
-            line-height: 1.8;
-            margin: 0;
-            padding: 20px;
-        }
-        .container {
-            max-width: 700px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        header img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            border: 2px solid #c9a46a;
-        }
-        h1, h2, h3 {
-            font-family: 'Playfair Display', serif;
-            color: #c9a46a;
-            font-weight: 700;
-        }
-        h1 { font-size: 3em; margin-bottom: 0; }
-        .intro, .closing {
-            background-color: #2c2c31;
-            padding: 25px;
-            border-radius: 8px;
-            margin: 30px 0;
-            text-align: left;
-            border-left: 5px solid #c9a46a;
-        }
-        .toc { /* Table of Contents styling */
-            margin: 40px 0;
-            padding: 20px;
-            background-color: #2c2c31;
-            border-radius: 8px;
-        }
-        .toc a {
-            color: #f5f5f5;
-            text-decoration: none;
-            margin: 0 15px;
-            font-family: 'Playfair Display', serif;
-            font-size: 1.2em;
-        }
-        .toc a:hover {
-            color: #c9a46a;
-        }
-        .friend-card {
-            padding-top: 60px; /* Adds space for the scroll anchor */
-            text-align: left;
-            margin-bottom: 25px;
-        }
-        .friend-card p {
-            font-style: italic;
-            white-space: pre-wrap;
-        }
-        .video-container {
-            margin-top: 20px;
-            /* Google Drive embeds are responsive by default */
-        }
-        footer {
-            margin-top: 50px;
-            font-size: 0.9em;
-            color: #888;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
-
     <div class="container">
-        <header>
+        <header data-aos="fade-down">
             <img src="https://i.imgur.com/gflF68n.png" alt="Happy Birthday Banner">
             <h1>Happy 21st Birthday, Amirtha</h1>
         </header>
 
         <main>
-            <div class="intro">
+            <div class="message-box" data-aos="fade-up">
                 <h3>My Dearest Love,</h3>
-                <p>Welcome to your own little corner of the internet, filled with love. For your 21st birthday, I wanted to gather messages from some of the people whose lives you've made brighter... [Your full intro message here]</p>
+                <p>Welcome to your own little corner of the internet, filled with love. For your 21st birthday, I wanted to gather messages from some of the people whose lives you've made brighter...</p>
                 <p><strong>- Kautik</strong></p>
             </div>
 
-            <div class="toc">
-                <h2>Messages From</h2>
-                <a href="#friend1">[Friend 1's Name]</a>
-                <a href="#friend2">[Friend 2's Name]</a>
-                <a href="#friend3">[Friend 3's Name]</a>
-            </div>
-            <div class="friends-section">
-                
-                <div class="friend-card" id="friend1">
-                    <h2>From [Friend 1's Name]</h2>
-                    <p>"Happy birthday to the most amazing person!..."</p>
-                    
-                    <div class="video-container">
-                        <iframe src="[PASTE GOOGLE DRIVE EMBED LINK HERE]" width="640" height="480" allow="autoplay"></iframe>
-                    </div>
-                </div>
-                <div class="friend-card" id="friend2">
-                    <h2>From [Friend 2's Name]</h2>
-                    <p>"Happy 21st! You are the kindest person I know..."</p>
-                    </div>
-                <div class="friend-card" id="friend3">
-                    <h2>From [Friend 3's Name]</h2>
-                    <p>"Another year older! So proud of you..."</p>
-                </div>
-                </div>
+            <h2 data-aos="fade-up">Click on a friend to see their message:</h2>
+            
+            <div class="friend-gallery">
+                <a href="friend1.html" class="friend-link" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://i.imgur.com/USER_ICON.png" alt="Friend 1 Photo">
+                    <h3>[Friend 1's Name]</h3>
+                </a>
 
-            <div class="closing">
-                <h3>My Final Note,</h3>
-                <p>Seeing all this love for you in one place just confirms what I've known since the moment I met you... [Your full closing message here]</p>
-            </div>
+                <a href="friend2.html" class="friend-link" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://i.imgur.com/USER_ICON.png" alt="Friend 2 Photo">
+                    <h3>[Friend 2's Name]</h3>
+                </a>
+                
+                </div>
         </main>
-        
-        <footer>
-            <p>With All Our Love &nbsp;&nbsp; • &nbsp;&nbsp; August 23, 2025</p>
-        </footer>
     </div>
 
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({ duration: 1000 });
+    </script>
 </body>
 </html>

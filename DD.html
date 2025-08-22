@@ -3,31 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A Message From [Friend's Name]</title>
+    <title>A Message From DD</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="styles.css"> <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        /* This keeps the particle background consistent */
+        #tsparticles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        /* Special styling for the long text to make it readable and beautiful */
+        .friend-card p {
+            white-space: pre-wrap; /* This preserves all the line breaks and spacing from her original message */
+            font-size: 1.2em;      /* Makes the text slightly larger */
+            line-height: 2;        /* Increases space between lines for readability */
+        }
+    </style>
 </head>
 <body>
+
+    <div id="tsparticles"></div>
+
     <div class="container">
-        <h1 data-aos="fade-down">A Message From [Friend's Name]</h1>
+        <h1 data-aos="fade-down">A Message From DD</h1>
         
         <div class="friend-card" data-aos="fade-up">
-            <p>"Happy birthday to the most amazing person! I'll never forget the time we... [etc.]"</p>
-            
-            <div class="video-container">
-                <iframe src="[PASTE GOOGLE DRIVE EMBED LINK HERE]" width="640" height="480" allow="autoplay"></iframe>
-            </div>
-        </div>
+            <p>
+Yo, DD here ❤ Happiest Birthday to my favourite soulmate ever🥹 Stay the happiestttt ever🤍💞 
+You're finally of legal age🎉I'll hold you to what you said, counting on you to get me my first drink😁
 
-        <a href="index.html" class="back-link" data-aos="fade-up" data-aos-delay="200">← Back to Main Page</a>
+It's been a while since I typed out long messages. I was initially planning to send something quirky and fun, but I wanted to keep it a bit heartfelt, so here we go.
+
+To be completely honest, I don't actually remember how we became friends😅
+I remember you being that girl from my class that Apsara seemed close to, but we never really spoke all that much when we were in 9th grade. Then time skip forward to grade 10, and suddenly we're exchanging random kpop related jokes while poor Jothi mam is struggling to teach us Trigonometry, and somehow we made our own inside jokes and along with it, we created memories. Even then, you had your own group of friends, and I had mine. Still, I'm glad that we started to talk, because here we are. 
+
+Suddenly we're best friends, and you're someone who is irreplaceable in my life. You're someone I talk to about my major quarter-life crisis to, and you're the person I share my minor inconveniences to as well.
+
+I think honestly the time I started to think of you as someone in my inner circle was when that fight broke out within my group of friends, and you spotted me crying in the washroom. The fight honestly seems irrelevant now, but back then it was the epitome of stress for me. I don't know if you even remember that conversation we had, but I remember it. And you told me everything I needed to hear. Not what I wanted, but what I needed. And that, shows just how much of a good friend you are. That's something that I just really, really love about you. And from there, we just spoke more and more, I'm glad.
+
+One thing about you that I genuinely adore is how you are seemingly so 'hot-headed and direct', but I know better. You have the softest heart ever, and that is coming from me, probably the most non-confrontational person you could ever meet. It's really adorable how you give importance to the little things that might seem insignificant, but speak volumes. There's just so many traits that I admire in you but if I have to point out something in particular, I would say your most flattering quality is your resilience and loyalty. 
+
+There are a lot of things I'd like to say, but all my thoughts cannot be expressed in just this one message. But still, I hope you know just how much you mean to me. 
+
+So, Amz. My biggest wish for you on your big day 21 is simple- never change. Grow stronger day by day, but never change the core of who you are. I know I say this every birthday, 'stay the same, never change, keep smiling' every year like clockwork, but I truly, truly mean it. It's because you're truly a beautiful soul inside out.
+
+I hope we never change as well. I know for sure that there have been moments where I've made you upset or mad, and the same goes for me. But the reason our friendship has never frayed is because we talk it out almost immediately. Either ways, if there have been any moments where you've felt hurt by my actions but couldn't tell me outright, I apologize.
+
+Anyways, now that I've said few things I wanted to, i'll try to make a lighter point- Remember our promise😤. When we're 27. If we're both single at the time, we're marrying each other👹🤺 Don't you dare forget👽👾🥀
+
+Always be the silly, quirky, sassy, dramatic girl I love<3 
+Again, happy bday to my soulmate girl. Lets stay in sync forever💋🫡 Love youuuuuu♾
+            </p>
+            </div>
+
+        <a href="index.html" class="back-link" data-aos="fade-up" data-aos-delay="200">← Back to All Messages</a>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.9.3/tsparticles.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
     <script>
-      AOS.init({ duration: 1000 });
+      // Initialize scroll animations
+      AOS.init({ duration: 1000, once: true });
+
+      // Initialize particle background
+      tsParticles.load("tsparticles", {
+        fpsLimit: 60,
+        particles: {
+          number: { value: 120, density: { enable: true, value_area: 800 } },
+          color: { value: "#c9a46a" },
+          shape: { type: "circle" },
+          opacity: { value: 0.5, random: true, anim: { enable: true, speed: 1, opacity_min: 0.1, sync: false } },
+          size: { value: 2, random: true, anim: { enable: false, speed: 40, size_min: 0.1, sync: false } },
+          line_linked: { enable: false },
+          move: {
+            enable: true,
+            speed: 0.5,
+            direction: "none",
+            random: true,
+            straight: false,
+            out_mode: "out",
+            bounce: false,
+            attract: { enable: false, rotateX: 600, rotateY: 1200 }
+          }
+        },
+        detectRetina: true
+      });
+
+      // Trigger the confetti when the page loads
+      confetti({
+        particleCount: 150,
+        spread: 90,
+        origin: { y: 0.6 }
+      });
     </script>
 </body>
 </html>

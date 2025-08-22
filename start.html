@@ -55,8 +55,21 @@
         }
         #feedbackMessage {
             margin-top: 15px;
-            min-height: 20px;
+            min-height: 45px; /* Increased height to accommodate hints */
             font-style: italic;
+            line-height: 1.6;
+        }
+        /* Style for the new hint link */
+        .hint-link {
+            display: none; /* Hidden by default */
+            color: #c9a46a;
+            text-decoration: none;
+            cursor: pointer;
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
+        .hint-link:hover {
+            text-decoration: underline;
         }
         .surprise-button {
             display: inline-block;
@@ -96,6 +109,8 @@
         
         <p id="feedbackMessage"></p>
         
+        <a id="hintLink" class="hint-link">Need a hint?</a>
+
         <a href="index.html" id="surpriseButton" class="surprise-button">Enter, My Love</a>
     </div>
 
@@ -108,25 +123,50 @@
       const passwordInput = document.getElementById('passwordInput');
       const surpriseButton = document.getElementById('surpriseButton');
       const feedbackMessage = document.getElementById('feedbackMessage');
+      const hintLink = document.getElementById('hintLink'); // Get the new hint link element
+
+      // --- START: NEW HINT LOGIC ---
+      let wrongAttempts = 0;
+      let currentHintIndex = 0; // Tracks which hint to show next
+      const hints = [
+          "It's a Tamil word.", // Hint #1
+          "It means 'cannot' or 'not possible'.", // Hint #2
+          "The word starts with 'M' and ends with 'U'. M _ _ _ _ _ _ _ U" // Hint #3 - very obvious
+      ];
+      // --- END: NEW HINT LOGIC ---
 
       passwordInput.addEventListener('keypress', function(event) {
         if (event.key === 'Enter') {
-          // Check the password when the user hits Enter
           checkPassword();
         }
       });
+      
+      // Event listener for the hint link
+      hintLink.addEventListener('click', function(event) {
+          event.preventDefault(); // Prevent page from jumping
+          showHint();
+      });
+
+      function showHint() {
+          if (currentHintIndex < hints.length) {
+              const hintText = hints[currentHintIndex];
+              // Append the hint to the feedback message
+              feedbackMessage.innerHTML += `<br><small>Hint: ${hintText}</small>`;
+              currentHintIndex++;
+              hintLink.style.display = 'none'; // Hide the link after it's been used for this turn
+          }
+      }
 
       function checkPassword() {
-        // The secret password, all lowercase
         const secretPassword = 'mudiyathu';
         const enteredPassword = passwordInput.value.toLowerCase().trim();
 
         if (enteredPassword === secretPassword) {
           feedbackMessage.textContent = 'Correct! ❤️';
           surpriseButton.classList.add('visible');
-          passwordInput.style.display = 'none'; // Hide the input box
+          passwordInput.style.display = 'none';
+          hintLink.style.display = 'none';
           
-          // Trigger a celebratory confetti burst!
           confetti({
             particleCount: 200,
             spread: 100,
@@ -134,7 +174,21 @@
           });
 
         } else {
-          feedbackMessage.textContent = 'Hehe, that\'s not it. Try again. 😉';
+            wrongAttempts++;
+            let message = "Hehe, that's not it. Try again. 😉";
+            feedbackMessage.innerHTML = message; // Set the base message
+            
+            // Logic for showing hints
+            if (wrongAttempts > 3) {
+                // After 3 wrong tries, show hints automatically
+                hintLink.style.display = 'none';
+                // Determine which hint to show based on attempts, capping at the last hint
+                const autoHintIndex = Math.min(wrongAttempts - 4, hints.length - 1);
+                feedbackMessage.innerHTML += `<br><small>Hint: ${hints[autoHintIndex]}</small>`;
+            } else {
+                // For the first 3 tries, give the option to ask for a hint
+                hintLink.style.display = 'inline';
+            }
         }
       }
     </script>

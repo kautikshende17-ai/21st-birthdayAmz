@@ -16,14 +16,24 @@
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: - Priya;
+            z-index: -1;
         }
-        /* Custom styling for the audio player */
-        audio {
-            width: 100%;
+        /* NEW: Styling for the link button */
+        .audio-link-button {
+            display: inline-block;
             margin-top: 20px;
-            filter: sepia(20%) saturate(70%) grayscale(1) contrast(99%) invert(98%);
+            padding: 15px 30px;
+            background-color: #c9a46a; /* Accent Gold */
+            color: #1a1a1d; /* Dark Blue Text */
             border-radius: 50px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+        .audio-link-button:hover {
+            transform: scale(1.05);
         }
     </style>
 </head>
@@ -37,10 +47,9 @@
         <div class="friend-card" data-aos="fade-up">
             <p>"Happy Birthday, Amirtha! I wanted to send a little voice note with my wishes for you..."</p>
             
-            <audio controls>
-                <source src="priya_message.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
+            <a href="https://drive.google.com/file/d/1Uzq0UOUMW33qe6h4ExszzFhIc9rsxqif/view?usp=sharing" class="audio-link-button" target="_blank">
+                Click Here to Listen
+            </a>
         </div>
 
         <a href="index.html" class="back-link" data-aos="fade-up" data-aos-delay="200">← Back to All Messages</a>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Message From Apsara</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"> <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        /* This keeps the particle background consistent */
+        #tsparticles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        /* Special styling for the long text to make it readable and beautiful */
+        .friend-card p {
+            white-space: pre-wrap; /* This preserves all the line breaks from her original message */
+            font-size: 1.2em;      /* Makes the text slightly larger */
+            line-height: 2;        /* Increases space between lines for readability */
+        }
+    </style>
+</head>
+<body>
+
+    <div id="tsparticles"></div>
+
+    <div class="container">
+        <h1 data-aos="fade-down">A Message From Apsara</h1>
+        
+        <div class="friend-card" data-aos="fade-up">
+            <p>
+hey amz, happy 21! its kinda sappy emotional to think i have gotten to wish u happy bdays for like nearly 7 years. I feel old thinking abt it but im glad i get to feel it with u. always months younger than me but yet smarter. love you sweetheart. always keep that smile on ur face, nothing else suits you much better than that. dw i prayed that u shld get everything u need in ur life so go pray for something better for your bday okay? ily (forgot the numbers but uk what i mean) <3
+            </p>
+            </div>
+
+        <a href="index.html" class="back-link" data-aos="fade-up" data-aos-delay="200">← Back to All Messages</a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.9.3/tsparticles.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
+    <script>
+      // Initialize scroll animations
+      AOS.init({ duration: 1000, once: true });
+
+      // Initialize particle background
+      tsParticles.load("tsparticles", {
+        fpsLimit: 60,
+        particles: {
+          number: { value: 120, density: { enable: true, value_area: 800 } },
+          color: { value: "#c9a46a" },
+          shape: { type: "circle" },
+          opacity: { value: 0.5, random: true, anim: { enable: true, speed: 1, opacity_min: 0.1, sync: false } },
+          size: { value: 2, random: true, anim: { enable: false, speed: 40, size_min: 0.1, sync: false } },
+          line_linked: { enable: false },
+          move: {
+            enable: true,
+            speed: 0.5,
+            direction: "none",
+            random: true,
+            straight: false,
+            out_mode: "out",
+            bounce: false,
+            attract: { enable: false, rotateX: 600, rotateY: 1200 }
+          }
+        },
+        detectRetina: true
+      });
+
+      // Trigger the confetti when the page loads
+      confetti({
+        particleCount: 150,
+        spread: 90,
+        origin: { y: 0.6 }
+      });
+    </script>
+</body>
+</html>

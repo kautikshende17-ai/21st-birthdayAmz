@@ -10,12 +10,9 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <style>
-        /* NEW STYLE FOR THE GLOWING TITLE */
         h1 {
             text-shadow: 0 0 15px rgba(201, 164, 106, 0.5); /* This creates the gold glow */
         }
-        
-        /* NEW STYLES FOR THE PARTICLE BACKGROUND */
         #tsparticles {
             position: fixed;
             top: 0;
@@ -42,20 +39,56 @@
                 <p><strong>- Kautik</strong></p>
             </div>
 
-            <h2 data-aos="fade-up">Click on a friend to see their message:</h2>
+            <h2 data-aos="fade-up">Click on a name to see their message:</h2>
             
             <div class="friend-gallery">
-                <a href="sara.html" class="friend-link" data-aos="fade-up" data-aos-delay="100">
-                    <img src="https://i.imgur.com/USER_ICON.png" alt="Friend 1 Photo">
-                    <h3>Sara</h3>
+                
+                <a href="abel.html" class="friend-link" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://i.imgur.com/USER_ICON.png" alt="Abel Photo">
+                    <h3>Abel</h3>
                 </a>
 
-                <a href="rohan.html" class="friend-link" data-aos="fade-up" data-aos-delay="200">
-                    <img src="https://i.imgur.com/USER_ICON.png" alt="Friend 2 Photo">
-                    <h3>Rohan</h3>
+                <a href="dd.html" class="friend-link" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://i.imgur.com/USER_ICON.png" alt="DD Photo">
+                    <h3>DD</h3>
+                </a>
+
+                <a href="kautik.html" class="friend-link" data-aos="fade-up" data-aos-delay="300">
+                    <img src="https://i.imgur.com/USER_ICON.png" alt="Kautik Photo">
+                    <h3>Kautik</h3>
+                </a>
+
+                <a href="mukesh.html" class="friend-link" data-aos="fade-up" data-aos-delay="400">
+                    <img src="https://i.imgur.com/USER_ICON.png" alt="Mukesh Photo">
+                    <h3>Mukesh</h3>
+                </a>
+
+                <a href="priya.html" class="friend-link" data-aos="fade-up" data-aos-delay="500">
+                    <img src="https://i.imgur.com/USER_ICON.png" alt="Priya Photo">
+                    <h3>Priya</h3>
                 </a>
                 
-                </div>
+                <a href="shrini.html" class="friend-link" data-aos="fade-up" data-aos-delay="600">
+                    <img src="https://i.imgur.com/USER_ICON.png" alt="Shrini Photo">
+                    <h3>Shrini</h3>
+                </a>
+                
+                <a href="smrithi.html" class="friend-link" data-aos="fade-up" data-aos-delay="700">
+                    <img src="https://i.imgur.com/USER_ICON.png" alt="Smrithi Photo">
+                    <h3>Smrithi</h3>
+                </a>
+
+                <a href="thushar.html" class="friend-link" data-aos="fade-up" data-aos-delay="800">
+                    <img src="https://i.imgur.com/USER_ICON.png" alt="Thushar Photo">
+                    <h3>Thushar</h3>
+                </a>
+
+                <a href="yogeetha.html" class="friend-link" data-aos="fade-up" data-aos-delay="900">
+                    <img src="https://i.imgur.com/USER_ICON.png" alt="Yogeetha Photo">
+                    <h3>Yogeetha</h3>
+                </a>
+
+            </div>
         </main>
     </div>
 
@@ -65,7 +98,7 @@
 
     <script>
       // Initialize the scroll animations
-      AOS.init({ duration: 1000 });
+      AOS.init({ duration: 1000, once: true });
 
       // Initialize the particle background
       tsParticles.load("tsparticles", {

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Special Day...</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #1a1a2d;
+            color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Lato', sans-serif;
+            overflow: hidden; /* Hide scrollbars */
+        }
+        #tsparticles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        .center-content {
+            text-align: center;
+            max-width: 600px;
+        }
+        .typing-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5em;
+            color: #c9a46a;
+            border-right: 2px solid rgba(255, 255, 255, 0.75);
+            white-space: nowrap;
+            overflow: hidden;
+            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+        }
+        /* The typing effect */
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        /* The typewriter cursor effect */
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #c9a46a; }
+        }
+        .surprise-button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 35px;
+            background-color: #c9a46a;
+            color: #1a1a2d;
+            border-radius: 50px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3em;
+            font-weight: bold;
+            text-decoration: none;
+            cursor: pointer;
+            opacity: 0; /* Initially hidden */
+            animation: fadeIn 2s ease 4s forwards; /* Fades in after 4 seconds */
+        }
+        /* The fade-in effect */
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="tsparticles"></div>
+
+    <div class="center-content">
+        <h1 class="typing-text">A very special day for my love...</h1>
+        
+        <a href="index.html" class="surprise-button">Click to Begin</a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.9.3/tsparticles.bundle.min.js"></script>
+    <script>
+      // Initialize the particle background
+      tsParticles.load("tsparticles", {
+        fpsLimit: 60,
+        particles: {
+          number: { value: 120, density: { enable: true, value_area: 800 } },
+          color: { value: "#c9a46a" },
+          shape: { type: "circle" },
+          opacity: { value: 0.5, random: true },
+          size: { value: 2, random: true },
+          move: {
+            enable: true,
+            speed: 0.5,
+            direction: "none",
+            random: true,
+            out_mode: "out",
+          }
+        },
+        detectRetina: true
+      });
+    </script>
+</body>
+</html>

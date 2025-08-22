@@ -1,1 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Message From Kautik</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"> <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        /* This keeps the particle background consistent */
+        #tsparticles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        .friend-card p {
+            white-space: pre-wrap;
+            font-size: 1.2em;
+            line-height: 2;
+        }
+        .apology-note {
+            font-size: 0.9em;
+            font-style: italic;
+            opacity: 0.8;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
 
+    <div id="tsparticles"></div>
+
+    <div class="container">
+        <h1 data-aos="fade-down">A Message From My Heart</h1>
+        
+        <div class="friend-card" data-aos="fade-up">
+            <p>
+My dear Princess,
+
+A million happy returns of the day! Princess is officially 21.
+
+I'm still trying to wrap my head around the fact that you're turning 21 today. I met you when you were 19, and it feels like I've been on this incredible journey alongside you, watching you bloom. To see how much you've grown, how much you've improved, and how you've become this even more incredible version of yourself... I couldn't possibly be more proud of the woman you are. You're coming into this birthday fresh off a huge victory, winning first prize in Bangalore. Honestly, a part of me just knew you would. I believe in you so, so much. Congratulations again, my beloved, talented dancer.
+
+Being so proud of you from this distance also comes with a sharp pang of missing you. I miss everything. I miss the sound of your voice telling me about your day, I miss our random video calls, I miss the simple feeling of just being near you and sharing the same air. I miss being the one to carry your things to make your day a little easier, I miss seeing a beautiful flower and wishing I could put it in your hair, and God, I miss kissing you.
+
+But above all else, I just want you to know how incredibly happy I am for you, and how much I love you for exactly who you are. I wouldn't change a single part of you. The strong dancer, the goofy girl who makes me laugh, the thoughtful friend, the romantic heart—I cherish every single piece of you.
+
+Once again, HAPPIEST BIRTHDAY, MY LOVE!!! ❤️🎉
+            </p>
+            
+            <div class="video-container">
+                <iframe src="https://drive.google.com/file/d/132I2vZbomvDNg-gFsna3BC0YJoumlLbS/preview" width="640" height="480" allow="autoplay"></iframe>
+            </div>
+            <p class="apology-note">
+                (P.S. The video was a bit too long to host anywhere else, so apologies for any inconvenience, my sweetheart. I just had too much to say. ❤️)
+            </p>
+        </div>
+
+        <a href="index.html" class="back-link" data-aos="fade-up" data-aos-delay="200">← Back to All Messages</a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.9.3/tsparticles.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
+    <script>
+      // Initialize scroll animations
+      AOS.init({ duration: 1000, once: true });
+
+      // Initialize particle background
+      tsParticles.load("tsparticles", { /* ... particle settings ... */ });
+
+      // Trigger the confetti when the page loads
+      confetti({ particleCount: 150, spread: 90, origin: { y: 0.6 } });
+    </script>
+</body>
+</html>

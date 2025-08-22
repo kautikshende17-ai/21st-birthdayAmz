@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A Message From [Friend's Name]</title>
+    <title>A Message From Thushar</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
@@ -25,13 +25,13 @@
     <div id="tsparticles"></div>
 
     <div class="container">
-        <h1 data-aos="fade-down">A Message From [Friend's Name]</h1>
+        <h1 data-aos="fade-down">A Message From Thushar</h1>
         
         <div class="friend-card" data-aos="fade-up">
-            <p>"Just wanted to say a few words for your birthday..."</p>
+            <p>"Happy 21st, Amirtha! Thinking of you on your special day..."</p>
             
             <div class="video-container">
-                <iframe src="https://drive.google.com/file/d/YOUR_FILE_ID_HERE/preview" width="640" height="480" allow="autoplay"></iframe>
+                <iframe src="https://www.youtube.com/embed/W5OX_B6Hg5M" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
 
@@ -46,7 +46,7 @@
       // Initialize scroll animations
       AOS.init({ duration: 1000, once: true });
 
-      // Initialize particle background (same as index page)
+      // Initialize particle background
       tsParticles.load("tsparticles", {
         fpsLimit: 60,
         particles: {
@@ -70,7 +70,7 @@
         detectRetina: true
       });
 
-      // Trigger the confetti when the page loads!
+      // Trigger the confetti when the page loads
       confetti({
         particleCount: 150,
         spread: 90,
